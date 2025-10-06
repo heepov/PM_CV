@@ -1,0 +1,598 @@
+/* CSS переменные */
+:root {
+    --primary-color: #3182ce;
+    --primary-hover: #2c5aa0;
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-muted: #718096;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-hover: #edf2f7;
+    --border-color: #e2e8f0;
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --shadow: 0 0 50px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.2s ease;
+    
+    /* Размеры шрифтов */
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
+    --font-size-base: 14px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 18px;
+    --font-size-2xl: 20px;
+    --font-size-3xl: 24px;
+    --font-size-4xl: 32px;
+}
+
+/* Reset и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    font-size: var(--font-size-base);
+}
+
+/* Шапка */
+.header {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius-lg);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    min-height: 140px;
+    align-items: center;
+}
+
+.photo-section {
+    flex-shrink: 0;
+    height: 100%;
+    width: auto;
+    max-height: 180px;
+    max-width: 180px;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 12px;
+}
+
+
+.name-title {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: var(--font-size-base);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-item strong {
+    min-width: 100px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.contact-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.08), rgba(49, 130, 206, 0.03));
+    padding: 2px 4px;
+    border-radius: 3px;
+    border: 1px solid rgba(49, 130, 206, 0.15);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.contact-link:hover {
+    color: var(--primary-hover);
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.12), rgba(44, 90, 160, 0.06));
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(49, 130, 206, 0.15);
+}
+
+/* Стили для ссылок в контенте */
+.achievements a, .job-description a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.1), rgba(49, 130, 206, 0.05));
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(49, 130, 206, 0.2);
+    transition: var(--transition);
+    display: inline-block;
+    position: relative;
+}
+
+.achievements a:hover, .job-description a:hover {
+    color: var(--primary-hover);
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.15), rgba(44, 90, 160, 0.08));
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(49, 130, 206, 0.2);
+}
+
+/* Стили для ссылок в названиях компаний */
+.company a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--font-size-base);
+    background: linear-gradient(135deg, rgba(49, 130, 206, 0.1), rgba(49, 130, 206, 0.05));
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(49, 130, 206, 0.2);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.company a:hover {
+    color: var(--primary-hover);
+    background: linear-gradient(135deg, rgba(44, 90, 160, 0.15), rgba(44, 90, 160, 0.08));
+    border-color: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(49, 130, 206, 0.2);
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius-lg);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Левая колонка */
+.left-column {
+    padding-right: 20px;
+    min-width: 0;
+}
+
+/* Правая колонка */
+.right-column {
+    padding-left: 20px;
+    min-width: 0;
+}
+
+/* Заголовки */
+h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+    position: relative;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+h5 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    margin-top: 16px;
+}
+
+/* О себе секция */
+.about-section {
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    margin-bottom: 20px;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* О себе секция в шапке */
+.header .about-section {
+    margin-bottom: 0;
+}
+
+.header .about-section p {
+    margin-bottom: 0;
+    font-size: var(--font-size-md);
+    line-height: 1.4;
+}
+
+
+/* Секции */
+section {
+    margin-bottom: 10px;
+}
+
+/* Информация о работе */
+.work-info-section {
+    margin-bottom: 20px;
+}
+
+.work-info-item {
+    margin-bottom: 8px;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Компетенции и результаты в левой колонке */
+.competencies-section, .results-section {
+    margin-bottom: 20px;
+}
+
+.competencies-section ul, .results-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.competencies-section li, .results-section li {
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.competencies-section li::before, .results-section li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.skill-category {
+    padding: 16px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.skill-category:hover {
+    background-color: var(--bg-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-hover);
+}
+
+.skill-category h4 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.skill-category p {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Образование */
+.education-item {
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+}
+
+.institution {
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.year {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.additional-education {
+    margin-top: 20px;
+}
+
+.additional-education h4 {
+    font-size: var(--font-size-base);
+    margin-bottom: 8px;
+}
+
+.additional-education ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.additional-education li {
+    margin-bottom: 6px;
+    padding-left: 16px;
+    position: relative;
+    font-size: var(--font-size-md);
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+.additional-education li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #38b2ac;
+    font-weight: bold;
+}
+
+/* Опыт работы */
+.job-item {
+    margin-bottom: 12px;
+    padding: 20px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.job-item:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-1px);
+}
+
+.job-header {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.occupation {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.company {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: var(--font-size-base);
+    margin-left: auto;
+    margin-right: 16px;
+}
+
+.period {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.job-description {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job-description li {
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.job-description li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.achievements {
+    border-radius: 6px;
+}
+
+.achievements h5 {
+    color: #2f855a;
+    margin-bottom: 12px;
+}
+
+.achievements ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.achievements li {
+    margin-bottom: 8px;
+    position: relative;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+        min-height: auto;
+    }
+    
+    .photo-section {
+        align-self: center;
+    }
+    
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    
+    .info-section {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    
+    .left-column {
+        padding-right: 0;
+    }
+    
+    .right-column {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    
+    h1 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    h2 {
+        font-size: var(--font-size-base);
+    }
+    
+    h3 {
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .contact-info {
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Улучшенные стили ссылок для мобильных устройств */
+    .contact-link, .achievements a, .job-description a, .company a {
+        padding: 3px 6px;
+        font-weight: 700;
+        border-width: 1.5px;
+    }
+}
+
+/* Печать */
+@media print {
+    body {
+        background-color: var(--bg-primary);
+        font-size: var(--font-size-xs);
+    }
+    
+    .header {
+        padding: 10px;
+    }
+    
+    .container {
+        margin: 0;
+        padding: 10px;
+    }
+}
