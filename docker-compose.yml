@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  resume-pm:
+    image: nginx:alpine
+    container_name: resume-pm
+    volumes:
+      - /data/projects/resume-pm:/usr/share/nginx/html:ro
+    networks:
+      - infra
+    restart: unless-stopped
+
+networks:
+  infra:
+    external: true
